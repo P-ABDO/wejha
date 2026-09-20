@@ -585,7 +585,7 @@ function buildWAMessage() {
   const notes       = document.getElementById("field-notes").value.trim();
 
   return [
-    `مرحبًا، أنا ${name || "—"}`,
+    `السلام عليكم, أنا ${name || "—"}`,
     `الجنسية: ${nationality || "—"}`,
     `مهتم بالتقديم إلى: ${university || "غير محدد"}`,
     `التخصص: ${program || "غير محدد"}`,
