@@ -1,0 +1,579 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="وجهة — بوابة الدراسة الجامعية في رواندا. استعرض تخصصات جامعتي ULK وINES وقدّم طلبك مباشرة عبر واتساب." />
+  <meta name="keywords" content="وجهة, الدراسة في رواندا, ULK, INES, جامعة كيغالي, بكالوريوس, ماجستير, رواندا" />
+  <title>وجهة — الدراسة الجامعية في رواندا</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+  <!-- اقرأ الثيم من localStorage قبل أي رسم لتجنب الوميض -->
+  <script>
+    (function() {
+      var t = localStorage.getItem('wejha-theme');
+      if (t === 'dark') document.documentElement.setAttribute('data-theme', 'dark');
+    })();
+  </script>
+</head>
+<body>
+
+  <!-- ===== HEADER ===== -->
+  <header id="main-header">
+    <div class="container header-inner">
+      <a href="#home" class="logo" id="logo-link" aria-label="وجهة - الصفحة الرئيسية">
+        <!-- الشعار الشفاف للثيم الفاتح -->
+        <img src="wejha.png" alt="وجهة" class="logo-img logo-light" width="36" height="36" />
+        <!-- شعار بخلفية بيضاء للثيم الداكن -->
+        <img src="wejha.jpg" alt="وجهة" class="logo-img logo-dark" width="36" height="36" />
+        <span class="logo-text">وجهة</span>
+      </a>
+
+      <nav id="main-nav" aria-label="التنقل الرئيسي">
+        <ul class="nav-list" id="nav-list">
+          <li><a href="#home"         class="nav-link" data-section="home">الرئيسية</a></li>
+          <li><a href="#universities" class="nav-link" data-section="universities">الجامعات</a></li>
+          <li><a href="#programs"     class="nav-link" data-section="programs">التخصصات</a></li>
+          <li><a href="#apply"        class="nav-link" data-section="apply">التقديم</a></li>
+          <li><a href="#contact"      class="nav-link" data-section="contact">تواصل معنا</a></li>
+        </ul>
+      </nav>
+
+      <div class="header-actions">
+        <!-- زر تبديل الثيم -->
+        <button class="theme-toggle" id="theme-toggle-btn" aria-label="تبديل الثيم" title="تبديل الوضع الداكن / الفاتح">
+          <!-- أيقونة الشمس (تظهر في الوضع الداكن) -->
+          <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <circle cx="12" cy="12" r="5"/>
+            <line x1="12" y1="1" x2="12" y2="3"/>
+            <line x1="12" y1="21" x2="12" y2="23"/>
+            <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/>
+            <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/>
+            <line x1="1" y1="12" x2="3" y2="12"/>
+            <line x1="21" y1="12" x2="23" y2="12"/>
+            <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/>
+            <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/>
+          </svg>
+          <!-- أيقونة القمر (تظهر في الوضع الفاتح) -->
+          <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
+          </svg>
+        </button>
+        <!-- زر الهامبرغر -->
+        <button class="hamburger" id="hamburger-btn" aria-label="القائمة" aria-expanded="false" aria-controls="main-nav">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- ===== MAIN CONTENT ===== -->
+  <main id="main-content">
+
+    <!-- ===== SECTION: HOME / HERO ===== -->
+    <section id="home" class="section active">
+      <div class="hero">
+        <div class="container">
+          <div class="hero-content">
+            <div class="hero-badge">رواندا — قلب أفريقيا</div>
+            <h1 class="hero-title">
+              ادرس في رواندا<br />
+              <span class="accent">قدّم الآن للدراسة الجامعية</span>
+            </h1>
+            <p class="hero-subtitle">
+              نساعدك في التقديم للدراسة الجامعية في رواندا بكل يسر وسهولة.
+              استعرض أكثر من <strong>70 تخصصًا</strong> في مرحلة البكالوريوس والماجستير والدبلوم
+              بأسعار مناسبة، وقدّم طلبك مباشرة عبر واتساب.
+            </p>
+            <div class="hero-stats">
+              <div class="stat">
+                <span class="stat-num">2</span>
+                <span class="stat-label">جامعات معتمدة</span>
+              </div>
+              <div class="stat-divider"></div>
+              <div class="stat">
+                <span class="stat-num">70+</span>
+                <span class="stat-label">تخصص متاح</span>
+              </div>
+              <div class="stat-divider"></div>
+              <div class="stat">
+                <span class="stat-num">3</span>
+                <span class="stat-label">حرم جامعي</span>
+              </div>
+            </div>
+            <div class="hero-cta">
+              <a href="#programs" class="btn btn-primary" id="hero-programs-btn">استعرض التخصصات</a>
+              <a href="https://wa.me/249991731500?text=%D9%85%D8%B1%D8%AD%D8%A8%D8%A7%D8%8C%20%D8%A3%D8%B1%D9%8A%D8%AF%20%D8%A7%D9%84%D8%A7%D8%B3%D8%AA%D9%81%D8%B3%D8%A7%D8%B1%20%D8%B9%D9%86%20%D8%A7%D9%84%D8%AF%D8%B1%D8%A7%D8%B3%D8%A9%20%D9%81%D9%8A%20%D8%B1%D9%88%D8%A7%D9%86%D8%AF%D8%A7"
+                 class="btn btn-outline" target="_blank" rel="noopener noreferrer" id="hero-whatsapp-btn">
+                <svg class="icon-wa" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+                تواصل معنا مباشرة
+              </a>
+            </div>
+          </div>
+          <div class="hero-visual" aria-hidden="true">
+            <div class="hero-card-float">
+              <div class="float-card card-1"><span>ULK — كيغالي</span></div>
+              <div class="float-card card-2"><span>INES — موسانزي</span></div>
+              <div class="float-card card-3 card-accent"><span>قبول مضمون</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Features Strip -->
+      <div class="features-strip">
+        <div class="container features-grid">
+          <div class="feature-item">
+            <svg class="feature-icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 14.5v-9l6 4.5-6 4.5z"/></svg>
+            <div>
+              <strong>أسعار مناسبة</strong>
+              <p>رسوم دراسية موحدة للطلاب المحليين والدوليين</p>
+            </div>
+          </div>
+          <div class="feature-item">
+            <svg class="feature-icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+            <div>
+              <strong>تقديم سريع</strong>
+              <p>أرسل طلبك مباشرة عبر واتساب في دقيقة واحدة</p>
+            </div>
+          </div>
+          <div class="feature-item">
+            <svg class="feature-icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 5h12M3 10h9M3 15h12M3 20h9"/></svg>
+            <div>
+              <strong>تعليم بالإنجليزية</strong>
+              <p>كل البرامج تُدرَّس باللغة الإنجليزية</p>
+            </div>
+          </div>
+          <div class="feature-item">
+            <svg class="feature-icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+            <div>
+              <strong>متابعة شخصية</strong>
+              <p>نرافقك في كل خطوات التقديم والقبول</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== SECTION: UNIVERSITIES ===== -->
+    <section id="universities" class="section">
+      <div class="container">
+        <div class="section-header">
+          <h2 class="section-title">الجامعات المتاحة</h2>
+          <p class="section-subtitle">جامعتان معتمدتان في رواندا تقدمان تعليمًا عالي الجودة بأسعار موحدة للجميع</p>
+        </div>
+
+        <div class="universities-grid">
+          <!-- ULK Card -->
+          <div class="uni-card" id="ulk-card">
+            <div class="uni-card-header ulk-header">
+              <div class="uni-logo-placeholder">ULK</div>
+              <div class="uni-badge">Kigali Independent University</div>
+            </div>
+            <div class="uni-card-body">
+              <h3>جامعة ULK</h3>
+              <p class="uni-desc">
+                جامعة كيغالي المستقلة — إحدى أبرز الجامعات الخاصة في رواندا، تأسست عام 1996.
+                تقدم برامج متنوعة في العلوم والتكنولوجيا والأعمال والقانون على مستويات متعددة.
+              </p>
+              <div class="uni-info-list">
+                <div class="uni-info-item">
+                  <svg class="info-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                  <span><strong>الحرم الجامعي:</strong> كيغالي (رئيسي) + جيسيني</span>
+                </div>
+                <div class="uni-info-item">
+                  <svg class="info-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+                  <span><strong>التأسيس:</strong> 1996</span>
+                </div>
+                <div class="uni-info-item">
+                  <svg class="info-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
+                  <span><strong>المراحل:</strong> دبلوم، بكالوريوس، B-TECH، ماجستير</span>
+                </div>
+                <div class="uni-info-item">
+                  <svg class="info-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+                  <span><strong>الأسعار:</strong> موحّدة للطلاب المحليين والدوليين</span>
+                </div>
+              </div>
+              <a href="#programs" class="btn btn-primary btn-full" data-filter-uni="ULK" id="ulk-programs-btn">عرض تخصصات ULK</a>
+            </div>
+          </div>
+
+          <!-- INES Card -->
+          <div class="uni-card" id="ines-card">
+            <div class="uni-card-header ines-header">
+              <div class="uni-logo-placeholder">INES</div>
+              <div class="uni-badge">Institut d'Enseignement Supérieur de Ruhengeri</div>
+            </div>
+            <div class="uni-card-body">
+              <h3>جامعة INES-Ruhengeri</h3>
+              <p class="uni-desc">
+                معهد التعليم العالي — جامعة مرموقة متخصصة في العلوم والهندسة والصحة والتكنولوجيا،
+                تقع في مدينة موسانزي شمال رواندا. تتميز ببنية تحتية متطورة ومعايير تعليمية عالية.
+              </p>
+              <div class="uni-info-list">
+                <div class="uni-info-item">
+                  <svg class="info-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                  <span><strong>الحرم الجامعي:</strong> موسانزي (Musanze)</span>
+                </div>
+                <div class="uni-info-item">
+                  <svg class="info-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+                  <span><strong>التأسيس:</strong> 2003</span>
+                </div>
+                <div class="uni-info-item">
+                  <svg class="info-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
+                  <span><strong>المراحل:</strong> دبلوم، بكالوريوس، ماجستير</span>
+                </div>
+                <div class="uni-info-item">
+                  <svg class="info-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+                  <span><strong>الأسعار:</strong> موحّدة للطلاب المحليين والدوليين</span>
+                </div>
+              </div>
+              <a href="#programs" class="btn btn-accent btn-full" data-filter-uni="INES" id="ines-programs-btn">عرض تخصصات INES</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Comparison Table -->
+        <div class="comparison-section">
+          <h3 class="comparison-title">مقارنة سريعة</h3>
+          <div class="table-wrapper">
+            <table class="comparison-table">
+              <thead>
+                <tr>
+                  <th>المعيار</th>
+                  <th>ULK</th>
+                  <th>INES</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>الموقع</td>
+                  <td>كيغالي + جيسيني</td>
+                  <td>موسانزي</td>
+                </tr>
+                <tr>
+                  <td>أرخص تخصص / سنة</td>
+                  <td>~$355</td>
+                  <td>~$545</td>
+                </tr>
+                <tr>
+                  <td>أنظمة الدراسة</td>
+                  <td>صباحي / مسائي / أسبوعي</td>
+                  <td>صباحي</td>
+                </tr>
+                <tr>
+                  <td>الرسوم للطلاب الدوليين</td>
+                  <td>مساوية للمحليين</td>
+                  <td>مساوية للمحليين</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== SECTION: PROGRAMS ===== -->
+    <section id="programs" class="section">
+      <div class="container">
+        <div class="section-header">
+          <h2 class="section-title">التخصصات والرسوم الدراسية</h2>
+          <p class="section-subtitle">الرسوم المعروضة سنوية. أسعار ULK بالدولار تقريبية (محوّلة بسعر صرف ≈ 1,180 RWF/USD)</p>
+        </div>
+
+        <!-- Filters -->
+        <div class="filters-bar" id="filters-bar">
+          <div class="filter-row">
+            <div class="filter-group">
+              <label class="filter-label">الجامعة</label>
+              <div class="tab-buttons" id="uni-tabs" role="tablist">
+                <button class="tab-btn active" data-uni="all"  id="tab-all"  role="tab" aria-selected="true">الكل</button>
+                <button class="tab-btn"         data-uni="ULK"  id="tab-ulk"  role="tab" aria-selected="false">ULK</button>
+                <button class="tab-btn"         data-uni="INES" id="tab-ines" role="tab" aria-selected="false">INES</button>
+              </div>
+            </div>
+
+            <div class="filter-group">
+              <label class="filter-label">المرحلة</label>
+              <div class="tab-buttons" id="level-tabs" role="tablist">
+                <button class="tab-btn active"   data-level="all"         id="level-all"     role="tab" aria-selected="true">الكل</button>
+                <button class="tab-btn"           data-level="بكالوريوس"  id="level-bach"    role="tab">بكالوريوس</button>
+                <button class="tab-btn"           data-level="ماجستير"    id="level-master"  role="tab">ماجستير</button>
+                <button class="tab-btn"           data-level="دبلوم متقدم" id="level-diploma" role="tab">دبلوم</button>
+                <button class="tab-btn"           data-level="B-TECH"     id="level-btech"   role="tab">B-TECH</button>
+              </div>
+            </div>
+          </div>
+
+          <div class="filter-row">
+            <div class="filter-group filter-group-field">
+              <label class="filter-label">المجال</label>
+              <div class="tab-buttons tab-buttons-wrap" id="field-tabs" role="tablist">
+                <button class="tab-btn active" data-field="all" id="field-all" role="tab" aria-selected="true">الكل</button>
+                <!-- تُضاف المجالات ديناميكيًا بواسطة JS -->
+              </div>
+            </div>
+
+            <div class="filter-group">
+              <label class="filter-label" for="search-input">بحث</label>
+              <div class="search-wrapper">
+                <input type="search" id="search-input" class="search-input" placeholder="ابحث عن تخصص..." aria-label="البحث عن تخصص" />
+                <svg class="search-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Results Count -->
+        <div class="results-info" id="results-info" aria-live="polite">
+          <span id="results-count"></span>
+        </div>
+
+        <!-- Programs Grid -->
+        <div class="programs-grid" id="programs-grid" aria-label="قائمة التخصصات"></div>
+
+        <!-- No Results -->
+        <div class="no-results hidden" id="no-results">
+          <p>لا توجد تخصصات مطابقة لبحثك</p>
+          <button class="btn btn-outline btn-sm" id="clear-filters-btn">مسح الفلاتر</button>
+        </div>
+
+        <!-- Additional Fees Accordion -->
+        <div class="accordion-section" id="fees-accordion">
+          <button class="accordion-trigger" id="fees-accordion-btn" aria-expanded="false" aria-controls="fees-content">
+            <span>رسوم إضافية — التسجيل، السكن، التخرج</span>
+            <svg class="accordion-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
+          </button>
+          <div class="accordion-content hidden" id="fees-content" role="region" aria-labelledby="fees-accordion-btn">
+            <div class="fees-grid">
+              <div class="fees-block">
+                <h4>INES-Ruhengeri</h4>
+                <ul>
+                  <li>رسوم التسجيل: <strong>45,000 RWF</strong> (غير مستردة)</li>
+                  <li>السكن الجامعي (اختياري): <strong>150,000 – 300,000 RWF / سنة</strong></li>
+                  <li>رسوم مشروع التخرج: <strong>215,000 – 400,000 RWF</strong></li>
+                  <li>الدفع عبر: Equity Bank، Bank of Kigali (USD)، MoMo</li>
+                </ul>
+              </div>
+              <div class="fees-block">
+                <h4>ULK</h4>
+                <ul>
+                  <li>رسوم التقديم: <strong>10,000 RWF (~$8)</strong></li>
+                  <li>رسوم التسجيل: <strong>45,000 RWF (~$38)</strong></li>
+                  <li>رسوم مشروع / درجة / عباءة التخرج: <strong>250,000 – 360,000 RWF</strong></li>
+                  <li>الرسوم الدراسية موحّدة للجميع دون استثناء</li>
+                </ul>
+              </div>
+            </div>
+            <p class="fees-note">أسعار ULK بالدولار تقريبية ومحوّلة بسعر صرف ≈ 1,180 RWF/USD. يُنصح بمراجعة السعر قبل اتخاذ قرار.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== SECTION: APPLY ===== -->
+    <section id="apply" class="section">
+      <div class="container">
+        <div class="section-header">
+          <h2 class="section-title">نموذج التقديم</h2>
+          <p class="section-subtitle">أكمل البيانات أدناه وسنرسلها مباشرة إلى مستشارنا عبر واتساب للمتابعة الفورية</p>
+        </div>
+
+        <div class="apply-wrapper">
+          <form id="apply-form" class="apply-form" novalidate>
+
+            <div class="form-row">
+              <div class="form-group">
+                <label for="field-name" class="form-label">الاسم الكامل <span class="required">*</span></label>
+                <input type="text" id="field-name" name="name" class="form-input" placeholder="مثال: أحمد محمد عبدالله" required autocomplete="name" />
+                <span class="field-error hidden" id="error-name">الرجاء إدخال الاسم الكامل</span>
+              </div>
+              <div class="form-group">
+                <label for="field-nationality" class="form-label">الجنسية</label>
+                <input type="text" id="field-nationality" name="nationality" class="form-input" placeholder="مثال: سوداني، مصري..." autocomplete="country-name" />
+              </div>
+            </div>
+
+            <div class="form-row">
+              <div class="form-group">
+                <label for="field-phone" class="form-label">رقم الهاتف / واتساب <span class="required">*</span></label>
+                <input type="tel" id="field-phone" name="phone" class="form-input" placeholder="+249 912 345 678" required autocomplete="tel" />
+                <span class="field-error hidden" id="error-phone">الرجاء إدخال رقم الهاتف</span>
+              </div>
+              <div class="form-group">
+                <label for="field-email" class="form-label">البريد الإلكتروني <span class="optional">(اختياري)</span></label>
+                <input type="email" id="field-email" name="email" class="form-input" placeholder="example@email.com" autocomplete="email" />
+              </div>
+            </div>
+
+            <div class="form-row">
+              <div class="form-group">
+                <label for="field-university" class="form-label">الجامعة المطلوبة</label>
+                <select id="field-university" name="university" class="form-input form-select">
+                  <option value="">-- اختر الجامعة --</option>
+                  <option value="ULK — Kigali Independent University">ULK — Kigali Independent University</option>
+                  <option value="INES-Ruhengeri">INES-Ruhengeri</option>
+                  <option value="غير محدد بعد">غير محدد بعد</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label for="field-program" class="form-label">التخصص المطلوب</label>
+                <input type="text" id="field-program" name="program" class="form-input" placeholder="مثال: هندسة البرمجيات..." />
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="field-notes" class="form-label">ملاحظات إضافية <span class="optional">(اختياري)</span></label>
+              <textarea id="field-notes" name="notes" class="form-input form-textarea" rows="4" placeholder="المؤهل الحالي، الميزانية، وقت التسجيل المفضل..."></textarea>
+            </div>
+
+            <div class="form-actions">
+              <button type="submit" class="btn btn-whatsapp" id="submit-btn-1">
+                <svg class="icon-wa" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+                إرسال عبر واتساب — الرقم الأول
+              </button>
+              <button type="button" class="btn btn-whatsapp-outline" id="submit-btn-2">
+                <svg class="icon-wa" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+                أو راسلنا على الرقم الثاني
+              </button>
+            </div>
+          </form>
+
+          <!-- Sidebar -->
+          <div class="apply-sidebar">
+            <div class="sidebar-card">
+              <h4>ماذا يحدث بعد التقديم؟</h4>
+              <ol class="steps-list">
+                <li>ترسل طلبك عبر واتساب بضغطة واحدة</li>
+                <li>يتواصل معك المستشار خلال 24 ساعة</li>
+                <li>يرشدك لإجراءات التسجيل الرسمية</li>
+                <li>تحصل على خطاب القبول من الجامعة</li>
+              </ol>
+            </div>
+            <div class="sidebar-card sidebar-card-accent">
+              <h4>للتواصل الفوري</h4>
+              <p class="contact-name-small">عبدالرحمن محمود</p>
+              <a href="https://wa.me/249991731500" class="contact-link" target="_blank" rel="noopener noreferrer">
+                <svg class="icon-wa-sm" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+                +249 99 173 1500
+              </a>
+              <a href="https://wa.me/250783711304" class="contact-link" target="_blank" rel="noopener noreferrer">
+                <svg class="icon-wa-sm" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+                +250 783 711 304
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== SECTION: CONTACT ===== -->
+    <section id="contact" class="section">
+      <div class="container">
+        <div class="section-header">
+          <h2 class="section-title">تواصل معنا</h2>
+          <p class="section-subtitle">نحن هنا لمساعدتك في كل خطوة من خطوات التقديم الجامعي</p>
+        </div>
+
+        <div class="contact-wrapper">
+          <div class="contact-main-card">
+            <div class="contact-avatar">ع</div>
+            <div class="contact-info">
+              <h3 class="contact-name">عبدالرحمن محمود</h3>
+              <p class="contact-title">مستشار التقديم الجامعي — رواندا</p>
+              <p class="contact-desc">
+                متخصص في مساعدة الطلاب العرب والسودانيين للدراسة في رواندا.
+                أتعامل مع جامعتَي ULK وINES مباشرة وأضمن لك متابعة شخصية حتى حصولك على القبول.
+              </p>
+              <div class="contact-buttons">
+                <a href="https://wa.me/249991731500?text=%D9%85%D8%B1%D8%AD%D8%A8%D8%A7%D8%8C%20%D8%A3%D8%B1%D9%8A%D8%AF%20%D8%A7%D9%84%D8%A7%D8%B3%D8%AA%D9%81%D8%B3%D8%A7%D8%B1%20%D8%B9%D9%86%20%D8%A7%D9%84%D8%AF%D8%B1%D8%A7%D8%B3%D8%A9%20%D9%81%D9%8A%20%D8%B1%D9%88%D8%A7%D9%86%D8%AF%D8%A7"
+                   class="btn btn-whatsapp" target="_blank" rel="noopener noreferrer" id="contact-wa-1">
+                  <svg class="icon-wa" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+                  واتساب: +249 99 173 1500
+                </a>
+                <a href="https://wa.me/250783711304?text=%D9%85%D8%B1%D8%AD%D8%A8%D8%A7%D8%8C%20%D8%A3%D8%B1%D9%8A%D8%AF%20%D8%A7%D9%84%D8%A7%D8%B3%D8%AA%D9%81%D8%B3%D8%A7%D8%B1%20%D8%B9%D9%86%20%D8%A7%D9%84%D8%AF%D8%B1%D8%A7%D8%B3%D8%A9%20%D9%81%D9%8A%20%D8%B1%D9%88%D8%A7%D9%86%D8%AF%D8%A7"
+                   class="btn btn-whatsapp-outline" target="_blank" rel="noopener noreferrer" id="contact-wa-2">
+                  <svg class="icon-wa" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+                  واتساب: +250 783 711 304
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- FAQ -->
+          <div class="faq-section">
+            <h3 class="faq-title">أسئلة شائعة</h3>
+            <div class="faq-list" id="faq-list">
+              <div class="faq-item">
+                <button class="faq-question" aria-expanded="false">
+                  <span>هل الدراسة في رواندا معترف بها دوليًا؟</span>
+                  <svg class="faq-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
+                </button>
+                <div class="faq-answer hidden">
+                  <p>نعم، كل من ULK وINES معترف بهما من قِبل المجلس الأعلى للتعليم في رواندا (HEC) وكثير من الدول العربية والأفريقية.</p>
+                </div>
+              </div>
+              <div class="faq-item">
+                <button class="faq-question" aria-expanded="false">
+                  <span>ما هي لغة التدريس؟</span>
+                  <svg class="faq-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
+                </button>
+                <div class="faq-answer hidden">
+                  <p>اللغة الرئيسية للتدريس هي الإنجليزية في كلا الجامعتين. بعض المقررات في INES قد تكون بالفرنسية.</p>
+                </div>
+              </div>
+              <div class="faq-item">
+                <button class="faq-question" aria-expanded="false">
+                  <span>هل يمكنني الدراسة مسائيًا مع العمل؟</span>
+                  <svg class="faq-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
+                </button>
+                <div class="faq-answer hidden">
+                  <p>نعم، توفر ULK نظام الدراسة المسائية ونهاية الأسبوع خصيصًا للعاملين، مع رسوم مختلفة قليلًا عن نظام الصباح.</p>
+                </div>
+              </div>
+              <div class="faq-item">
+                <button class="faq-question" aria-expanded="false">
+                  <span>هل الرسوم موحدة للطلاب الدوليين؟</span>
+                  <svg class="faq-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
+                </button>
+                <div class="faq-answer hidden">
+                  <p>نعم، الرسوم الدراسية موحّدة تمامًا للطلاب المحليين والدوليين في <strong>كلتا الجامعتين</strong> ULK وINES — لا يوجد أي فرق في السعر.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ===== FOOTER ===== -->
+  <footer id="main-footer">
+    <div class="container footer-inner">
+      <div class="footer-logo">وجهة</div>
+      <p class="footer-copy">
+        &copy; <span id="current-year"></span> — وجهة | جميع الأسعار تقديرية وتُحدَّث دوريًا
+      </p>
+      <div class="footer-links">
+        <a href="#home"         class="footer-link">الرئيسية</a>
+        <a href="#programs"     class="footer-link">التخصصات</a>
+        <a href="#apply"        class="footer-link">التقديم</a>
+        <a href="#contact"      class="footer-link">تواصل</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Floating WhatsApp Button -->
+  <a href="https://wa.me/249991731500?text=%D9%85%D8%B1%D8%AD%D8%A8%D8%A7%D9%8B%2C%20%D8%A3%D8%B1%D9%8A%D8%AF%20%D8%A7%D9%84%D8%A7%D8%B3%D8%AA%D9%81%D8%B3%D8%A7%D8%B1%20%D8%B9%D9%86%20%D8%A7%D9%84%D8%AF%D8%B1%D8%A7%D8%B3%D8%A9%20%D9%81%D9%8A%20%D8%B1%D9%88%D8%A7%D9%86%D8%AF%D8%A7"
+     class="float-whatsapp" target="_blank" rel="noopener noreferrer" id="float-wa-btn" aria-label="تواصل عبر واتساب">
+    <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+  </a>
+
+  <script src="app.js"></script>
+</body>
+</html>
