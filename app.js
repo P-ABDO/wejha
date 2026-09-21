@@ -156,7 +156,7 @@ const state = {
   searchQuery:   "",
 };
 
-const SECTIONS = ["home", "universities", "programs", "apply", "contact"];
+const SECTIONS = ["home", "universities", "programs", "apply", "contact", "rwanda"];
 let searchTimer = null;
 
 // ================================================
@@ -744,6 +744,9 @@ function init() {
   // FAQ
   setupFAQ();
 
+  // صفحة رواندا
+  setupRwandaPage();
+
   // القسم الأولي
   showSection((location.hash || "#home").replace("#", ""));
 }
@@ -753,4 +756,137 @@ if (document.readyState === "loading") {
   document.addEventListener("DOMContentLoaded", init);
 } else {
   init();
+}
+
+// ================================================
+//  صفحة اكتشف رواندا — كل المنطق التفاعلي
+// ================================================
+
+function setupRwandaPage() {
+  setupRwandaTabs();
+  setupNatureSlider();
+  setupFlipCardKeyboard();
+  setupCountUpObserver();
+}
+
+// ===== Tabs =====
+function setupRwandaTabs() {
+  const tabs = document.querySelectorAll(".rw-tab-btn");
+  tabs.forEach(btn => {
+    btn.addEventListener("click", () => {
+      const target = btn.getAttribute("data-rwtab");
+
+      // تحديث أزرار التبويبات
+      tabs.forEach(t => {
+        t.classList.remove("active");
+        t.setAttribute("aria-selected", "false");
+      });
+      btn.classList.add("active");
+      btn.setAttribute("aria-selected", "true");
+
+      // إخفاء كل الـ panels وإظهار المطلوب
+      document.querySelectorAll(".rw-panel").forEach(p => p.classList.remove("active"));
+      const panel = document.getElementById("rwpanel-" + target);
+      if (panel) panel.classList.add("active");
+
+      // إذا كان الأمان → ابدأ العداد إذا لم يبدأ بعد
+      if (target === "safety") triggerCountUp();
+    });
+  });
+}
+
+// ===== Count-up Animation =====
+let countUpStarted = false;
+
+function triggerCountUp() {
+  if (countUpStarted) return;
+  countUpStarted = true;
+
+  const counters = document.querySelectorAll(".rw-stat-num[data-target]");
+  counters.forEach(el => {
+    const target  = parseFloat(el.getAttribute("data-target"));
+    const decimal = parseInt(el.getAttribute("data-decimal") || "0", 10);
+    const duration = 1800; // ms
+    const step  = 16; // ~60fps
+    const steps = duration / step;
+    const increment = target / steps;
+    let current = 0;
+
+    const timer = setInterval(() => {
+      current = Math.min(current + increment, target);
+      el.textContent = current.toFixed(decimal);
+      if (current >= target) {
+        el.textContent = target.toFixed(decimal);
+        clearInterval(timer);
+      }
+    }, step);
+  });
+}
+
+function setupCountUpObserver() {
+  // يشغّل العداد عند ظهور قسم الأمان في الشاشة
+  const statsEl = document.getElementById("safety-stats");
+  if (!statsEl || !window.IntersectionObserver) return;
+
+  const obs = new IntersectionObserver(entries => {
+    if (entries[0].isIntersecting) {
+      triggerCountUp();
+      obs.disconnect();
+    }
+  }, { threshold: 0.4 });
+
+  obs.observe(statsEl);
+}
+
+// ===== Nature Slider =====
+function setupNatureSlider() {
+  const slider = document.getElementById("nature-slider");
+  if (!slider) return;
+
+  const slides = slider.querySelectorAll(".rw-slide");
+  const dotsContainer = document.getElementById("nature-dots");
+  const prevBtn = document.getElementById("nature-prev");
+  const nextBtn = document.getElementById("nature-next");
+  let current = 0;
+
+  // بناء النقاط
+  if (dotsContainer) {
+    slides.forEach((_, i) => {
+      const dot = document.createElement("button");
+      dot.className = "rw-slider-dot" + (i === 0 ? " active" : "");
+      dot.setAttribute("aria-label", `الشريحة ${i + 1}`);
+      dot.addEventListener("click", () => goTo(i));
+      dotsContainer.appendChild(dot);
+    });
+  }
+
+  function goTo(idx) {
+    slides[current].classList.remove("active");
+    if (dotsContainer) dotsContainer.querySelectorAll(".rw-slider-dot")[current]?.classList.remove("active");
+
+    current = (idx + slides.length) % slides.length;
+
+    slides[current].classList.add("active");
+    if (dotsContainer) dotsContainer.querySelectorAll(".rw-slider-dot")[current]?.classList.add("active");
+  }
+
+  if (prevBtn) prevBtn.addEventListener("click", () => goTo(current - 1));
+  if (nextBtn) nextBtn.addEventListener("click", () => goTo(current + 1));
+
+  // Auto-advance كل 5 ثوانٍ
+  let autoTimer = setInterval(() => goTo(current + 1), 5000);
+  slider.addEventListener("mouseenter", () => clearInterval(autoTimer));
+  slider.addEventListener("mouseleave", () => { autoTimer = setInterval(() => goTo(current + 1), 5000); });
+}
+
+// ===== Flip Card Keyboard =====
+function setupFlipCardKeyboard() {
+  document.querySelectorAll(".flip-card").forEach(card => {
+    card.addEventListener("keydown", e => {
+      if (e.key === "Enter" || e.key === " ") {
+        e.preventDefault();
+        card.classList.toggle("flipped");
+      }
+    });
+  });
 }

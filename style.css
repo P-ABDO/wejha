@@ -5,12 +5,12 @@
 
 /* ===== CSS Variables — الثيم الفاتح (افتراضي) ===== */
 :root {
-  --accent:          #1FB6A5;
+  --accent:          #3aa79a;
   --accent-dark:     #178f80;
   --accent-light:    #e8f9f7;
 
-  --bg:              #F7F8FA;
-  --bg-white:        #ffffff;
+  --bg:              #f5f6f8;
+  --bg-white:        #eee;
   --bg-card:         #ffffff;
   --bg-input:        #F7F8FA;
   --bg-strip:        #F2F4F7;
@@ -1099,11 +1099,393 @@ input, select, textarea { font-family: var(--font); }
   gap: 14px;
 }
 
-.footer-logo { font-size: 1.05rem; font-weight: 800; color: white; }
+.footer-logo {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 1.05rem;
+  font-weight: 800;
+  color: white;
+}
+.footer-logo-img {
+  width: 28px;
+  height: 28px;
+  object-fit: contain;
+  border-radius: 5px;
+  flex-shrink: 0;
+}
 .footer-copy { font-size: 0.78rem; color: rgba(255,255,255,0.5); text-align: center; }
-.footer-links { display: flex; gap: 14px; flex-wrap: wrap; }
-.footer-link { font-size: 0.8rem; color: rgba(255,255,255,0.55); transition: color var(--transition); }
+.footer-links { display: flex; gap: 14px; flex-wrap: wrap; align-items: center; }
+.footer-link { font-size: 0.8rem; color: rgba(255,255,255,0.55); transition: color var(--transition); display: flex; align-items: center; gap: 5px; }
 .footer-link:hover { color: white; }
+.footer-link-tiktok { color: rgba(255,255,255,0.55); }
+.footer-link-tiktok:hover { color: white; }
+
+/* TikTok Button */
+.btn-tiktok {
+  display: flex !important;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 11px 22px;
+  background: var(--bg-strip);
+  color: var(--text-primary);
+  border: 2px solid var(--border);
+  border-radius: var(--radius-sm);
+  font-family: var(--font);
+  font-size: 0.88rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all var(--transition);
+  text-decoration: none;
+  white-space: nowrap;
+}
+.btn-tiktok:hover { border-color: var(--text-primary); background: var(--text-primary); color: var(--bg); }
+
+/* =========================================
+   RWANDA PAGE — اكتشف رواندا
+   ========================================= */
+#rwanda {
+  background: var(--bg);
+  padding-bottom: 60px;
+  transition: background var(--transition);
+}
+
+/* === Tabs Nav === */
+.rw-tabs-nav {
+  display: flex;
+  gap: 6px;
+  flex-wrap: wrap;
+  margin-bottom: 28px;
+  border-bottom: 2px solid var(--border);
+  padding-bottom: 0;
+}
+
+.rw-tab-btn {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  padding: 10px 18px;
+  font-family: var(--font);
+  font-size: 0.86rem;
+  font-weight: 700;
+  color: var(--text-muted);
+  background: transparent;
+  border: none;
+  border-bottom: 3px solid transparent;
+  margin-bottom: -2px;
+  cursor: pointer;
+  transition: all var(--transition);
+  border-radius: var(--radius-sm) var(--radius-sm) 0 0;
+  white-space: nowrap;
+}
+.rw-tab-btn svg { width: 17px; height: 17px; flex-shrink: 0; }
+.rw-tab-btn:hover { color: var(--accent); background: var(--accent-light); }
+.rw-tab-btn.active { color: var(--accent); border-bottom-color: var(--accent); background: var(--accent-light); }
+
+/* === Panels === */
+.rw-panel { display: none; animation: fadeIn 0.3s ease both; }
+.rw-panel.active { display: block; }
+
+.rw-panel-grid {
+  display: grid;
+  grid-template-columns: 1fr 340px;
+  gap: 32px;
+  align-items: start;
+}
+
+.rw-panel-title {
+  font-size: clamp(1.2rem, 2.5vw, 1.65rem);
+  font-weight: 800;
+  color: var(--text-primary);
+  margin-bottom: 12px;
+}
+
+.rw-panel-desc {
+  font-size: 0.92rem;
+  color: var(--text-secondary);
+  line-height: 1.8;
+  margin-bottom: 22px;
+}
+
+/* === Stat Counters === */
+.rw-stats {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+  margin-bottom: 18px;
+}
+
+.rw-stat-box {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 18px 22px;
+  flex: 1;
+  min-width: 160px;
+  transition: background var(--transition), border-color var(--transition);
+}
+
+.rw-stat-num {
+  font-size: 2.5rem;
+  font-weight: 900;
+  color: var(--accent);
+  line-height: 1;
+  margin-bottom: 6px;
+  font-variant-numeric: tabular-nums;
+}
+
+.rw-stat-label {
+  font-size: 0.8rem;
+  color: var(--text-secondary);
+  line-height: 1.5;
+}
+.rw-stat-sub { display: block; font-size: 0.73rem; color: var(--text-muted); margin-top: 2px; }
+
+.rw-source {
+  font-size: 0.72rem;
+  color: var(--text-muted);
+  font-style: italic;
+  border-right: 2px solid var(--border);
+  padding-right: 8px;
+}
+
+/* === Image Placeholder === */
+.rw-img-placeholder {
+  background: var(--bg-strip);
+  border: 2px dashed var(--border);
+  border-radius: var(--radius-lg);
+  height: 280px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  color: var(--text-muted);
+  font-size: 0.78rem;
+  text-align: center;
+  padding: 20px;
+  transition: background var(--transition), border-color var(--transition);
+}
+.rw-img-placeholder svg { width: 70px; height: 70px; opacity: 0.35; }
+.rw-img-placeholder p { font-size: 0.73rem; color: var(--text-muted); max-width: 180px; line-height: 1.5; }
+
+/* === Real Images === */
+.rw-img-real {
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  height: 280px;
+  box-shadow: var(--shadow-md);
+}
+.rw-img-real img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+  transition: transform 0.4s ease;
+}
+.rw-img-real:hover img { transform: scale(1.04); }
+
+/* === Slider real images === */
+.rw-slide-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+  border-radius: var(--radius);
+}
+
+/* === Flip Cards === */
+.flip-cards-row { display: flex; gap: 14px; flex-wrap: wrap; margin-top: 4px; }
+
+.flip-card {
+  width: 175px;
+  height: 160px;
+  perspective: 900px;
+  cursor: pointer;
+  flex-shrink: 0;
+}
+.flip-card:focus { outline: 2px solid var(--accent); border-radius: var(--radius); }
+
+.flip-card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transform-style: preserve-3d;
+  transition: transform 0.55s ease;
+}
+.flip-card.flipped .flip-card-inner { transform: rotateY(180deg); }
+
+.flip-card-front,
+.flip-card-back {
+  position: absolute;
+  inset: 0;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  border-radius: var(--radius);
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  gap: 8px;
+}
+
+.flip-card-front {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  color: var(--text-primary);
+  font-size: 0.8rem;
+}
+.flip-card-front svg { width: 30px; height: 30px; color: var(--accent); }
+.flip-card-front strong { font-size: 0.84rem; color: var(--accent); }
+
+.flip-card-back {
+  background: var(--accent);
+  color: white;
+  transform: rotateY(180deg);
+  font-size: 0.82rem;
+  line-height: 1.55;
+}
+
+/* === Transport List === */
+.rw-transport-list { display: flex; flex-direction: column; gap: 16px; }
+
+.rw-transport-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 14px;
+  transition: background var(--transition), border-color var(--transition);
+}
+.rw-transport-item:hover { border-color: var(--accent); }
+.rw-t-icon { width: 22px; height: 22px; flex-shrink: 0; margin-top: 2px; color: var(--accent); }
+.rw-transport-item strong { font-size: 0.88rem; display: block; margin-bottom: 3px; color: var(--text-primary); }
+.rw-transport-item p { font-size: 0.8rem; color: var(--text-secondary); line-height: 1.55; margin: 0; }
+
+/* === Open Cards === */
+.rw-open-cards { display: flex; flex-direction: column; gap: 12px; }
+.rw-open-card {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+  padding: 14px;
+  background: var(--accent-light);
+  border-radius: var(--radius);
+  border: 1px solid rgba(31,182,165,0.18);
+}
+.rw-open-card svg { width: 22px; height: 22px; flex-shrink: 0; margin-top: 2px; color: var(--accent); }
+.rw-open-card strong { font-size: 0.88rem; display: block; margin-bottom: 3px; color: var(--text-primary); }
+.rw-open-card p { font-size: 0.8rem; color: var(--text-secondary); margin: 0; line-height: 1.5; }
+
+/* === Nature Slider === */
+.rw-slider {
+  position: relative;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  transition: background var(--transition), border-color var(--transition);
+}
+
+.rw-slide { display: none; }
+.rw-slide.active { display: flex; flex-direction: column; }
+
+.rw-slide-img {
+  height: 130px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--bg-strip);
+  border-bottom: 1px solid var(--border);
+  color: var(--text-muted);
+  transition: background var(--transition);
+}
+.rw-slide-img svg { width: 90px; height: 60px; opacity: 0.4; }
+
+.rw-slide-info { padding: 14px 16px; }
+.rw-slide-info strong { display: block; font-size: 0.9rem; color: var(--text-primary); margin-bottom: 4px; }
+.rw-slide-info p { font-size: 0.8rem; color: var(--text-secondary); margin-bottom: 6px; line-height: 1.55; }
+
+.rw-slide-search {
+  display: inline-block;
+  font-size: 0.7rem;
+  color: var(--accent);
+  background: var(--accent-light);
+  padding: 2px 8px;
+  border-radius: var(--radius-pill);
+  font-style: italic;
+}
+
+.rw-slider-controls {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  padding: 10px 16px;
+  border-top: 1px solid var(--border-light);
+}
+
+.rw-slider-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  border: 1.5px solid var(--border);
+  color: var(--text-secondary);
+  background: var(--bg-card);
+  cursor: pointer;
+  transition: all var(--transition);
+  font-family: var(--font);
+}
+.rw-slider-btn:hover { border-color: var(--accent); color: var(--accent); background: var(--accent-light); }
+.rw-slider-btn svg { width: 15px; height: 15px; }
+
+.rw-slider-dots { display: flex; gap: 5px; }
+.rw-slider-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--border);
+  cursor: pointer;
+  transition: background var(--transition), transform var(--transition);
+}
+.rw-slider-dot.active { background: var(--accent); transform: scale(1.3); }
+
+/* === CTA Strip === */
+.rw-cta-strip {
+  margin-top: 40px;
+  background: linear-gradient(135deg, var(--accent) 0%, var(--accent-dark) 100%);
+  border-radius: var(--radius-lg);
+  padding: 28px 32px;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+.rw-cta-strip p {
+  flex: 1;
+  font-size: 1rem;
+  font-weight: 700;
+  color: white;
+  min-width: 200px;
+}
+.rw-cta-strip .btn-primary { background: white; color: var(--accent-dark); border-color: white; }
+.rw-cta-strip .btn-primary:hover { background: rgba(255,255,255,0.88); }
+.rw-cta-strip .btn-outline { color: white; border-color: rgba(255,255,255,0.6); }
+.rw-cta-strip .btn-outline:hover { background: white; color: var(--accent-dark); border-color: white; }
+
+/* nav-link-rwanda تمييز خفيف */
+.nav-link-rwanda { color: var(--accent) !important; }
+.nav-link-rwanda:hover, .nav-link-rwanda.active { background: var(--accent-light) !important; }
 
 /* ========================================
    FLOAT WHATSAPP
@@ -1145,7 +1527,14 @@ input, select, textarea { font-family: var(--font); }
   .fees-grid { grid-template-columns: 1fr; }
 
   .programs-grid { grid-template-columns: repeat(2, 1fr); }
+
+  /* Rwanda page */
+  .rw-panel-grid { grid-template-columns: 1fr; }
+  .rw-panel-visual { display: none; }
+  .flip-card { width: 155px; height: 150px; }
+  .rw-cta-strip { padding: 22px 20px; }
 }
+
 
 /* ========================================
    RESPONSIVE — HEADER BREAKPOINT (≤ 800px)
