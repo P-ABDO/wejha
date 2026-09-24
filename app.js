@@ -83,8 +83,7 @@ const programs = [
   { uni:"ULK", campus:"Kigali", level:"ماجستير", field:"علوم الحاسوب وتقنية المعلومات", name:"هندسة البرمجيات (MSc Software Engineering)",                 duration:2, schedules:[{type:"عام", usd:1900, rwf:2240000}] },
 
   // ===================== INES (Musanze) — بكالوريوس =====================
-  { uni:"INES", campus:"Musanze", level:"بكالوريوس", field:"الهندسة",                        name:"العمارة - سنة 1،2 (Architecture)",                           duration:5, schedules:[{type:"عام", usd:2175, rwf:2570000}] },
-  { uni:"INES", campus:"Musanze", level:"بكالوريوس", field:"الهندسة",                        name:"العمارة - سنة 3،4،5 (Architecture)",                         duration:5, schedules:[{type:"عام", usd:1560, rwf:1850000}] },
+  { uni:"INES", campus:"Musanze", level:"بكالوريوس", field:"الهندسة",                        name:"العمارة (Architecture)",                                      duration:5, schedules:[{type:"عام", usd:2175, rwf:2570000}] },
   { uni:"INES", campus:"Musanze", level:"بكالوريوس", field:"الهندسة",                        name:"الهندسة المدنية (Civil Engineering)",                         duration:4, schedules:[{type:"عام", usd:1205, rwf:1425000}] },
   { uni:"INES", campus:"Musanze", level:"بكالوريوس", field:"الهندسة",                        name:"هندسة المياه (Water Engineering)",                            duration:4, schedules:[{type:"عام", usd:1205, rwf:1425000}] },
   { uni:"INES", campus:"Musanze", level:"بكالوريوس", field:"الهندسة",                        name:"هندسة الطاقة الكهربائية (Electrical Power Engineering)",     duration:4, schedules:[{type:"عام", usd:1480, rwf:1750000}] },
@@ -98,22 +97,25 @@ const programs = [
   { uni:"INES", campus:"Musanze", level:"بكالوريوس", field:"العلوم الصحية",                  name:"التخدير (Anaesthesia)",                                      duration:4, schedules:[{type:"عام", usd:2410, rwf:2850000}] },
   { uni:"INES", campus:"Musanze", level:"بكالوريوس", field:"إدارة الأعمال والاقتصاد",        name:"الإحصاء التطبيقي على الاقتصاد",                              duration:4, schedules:[{type:"عام", usd:680,  rwf:800000}] },
   { uni:"INES", campus:"Musanze", level:"بكالوريوس", field:"الزراعة والتقنية الحيوية",       name:"التقنية الحيوية الغذائية (Food Biotechnology)",               duration:4, schedules:[{type:"عام", usd:850,  rwf:1000000}] },
-  { uni:"INES", campus:"Musanze", level:"بكالوريوس", field:"الزراعة والتقنية الحيوية",       name:"التقنية الحيوية النباتية - سنة 1 (Plant Biotechnology)",     duration:4, schedules:[{type:"عام", usd:850,  rwf:1000000}] },
-  { uni:"INES", campus:"Musanze", level:"بكالوريوس", field:"الزراعة والتقنية الحيوية",       name:"التقنية الحيوية النباتية - سنة 2،3،4",                       duration:4, schedules:[{type:"عام", usd:780,  rwf:925000}] },
+  { uni:"INES", campus:"Musanze", level:"بكالوريوس", field:"الزراعة والتقنية الحيوية",       name:"التقنية الحيوية النباتية (Plant Biotechnology)",              duration:4, schedules:[{type:"عام", usd:850,  rwf:1000000}] },
   { uni:"INES", campus:"Musanze", level:"بكالوريوس", field:"الزراعة والتقنية الحيوية",       name:"الإنتاج الزراعي (Crop Production)",                          duration:4, schedules:[{type:"عام", usd:850,  rwf:1000000}] },
   { uni:"INES", campus:"Musanze", level:"بكالوريوس", field:"إدارة الأراضي والمساحة",         name:"المساحة (Land Survey)",                                      duration:4, schedules:[{type:"عام", usd:1030, rwf:1215000}] },
-  { uni:"INES", campus:"Musanze", level:"بكالوريوس", field:"علوم الحاسوب وتقنية المعلومات", name:"علوم الحاسوب - سنة 1،2 (Computer Sciences)",                 duration:4, schedules:[{type:"عام", usd:1020, rwf:1200000}] },
-  { uni:"INES", campus:"Musanze", level:"بكالوريوس", field:"علوم الحاسوب وتقنية المعلومات", name:"هندسة البرمجيات - سنة 3،4 (Software Engineering)",           duration:4, schedules:[{type:"عام", usd:970,  rwf:1150000}] },
-  { uni:"INES", campus:"Musanze", level:"بكالوريوس", field:"علوم الحاسوب وتقنية المعلومات", name:"هندسة الشبكات - سنة 3،4 (Network Engineering)",              duration:4, schedules:[{type:"عام", usd:970,  rwf:1150000}] },
-  { uni:"INES", campus:"Musanze", level:"بكالوريوس", field:"علوم الحاسوب وتقنية المعلومات", name:"تقنية المعلومات الصناعية - سنة 3،4",                         duration:4, schedules:[{type:"عام", usd:970,  rwf:1150000}] },
+  { uni:"INES", campus:"Musanze", level:"بكالوريوس", field:"علوم الحاسوب وتقنية المعلومات", name:"علوم الحاسوب (Computer Sciences)",                           duration:4, schedules:[{type:"عام", usd:1020, rwf:1200000}],
+    branches:[
+      { name:"هندسة البرمجيات (Software Engineering)",        duration:4, usd:970, rwf:1150000 },
+      { name:"هندسة الشبكات (Network Engineering)",           duration:4, usd:970, rwf:1150000 },
+      { name:"تقنية المعلومات الصناعية (Industrial Information Technology)", duration:4, usd:970, rwf:1150000 },
+    ] },
   { uni:"INES", campus:"Musanze", level:"بكالوريوس", field:"إدارة الأراضي والمساحة",         name:"إدارة الأراضي (Land Administration and Management)",         duration:4, schedules:[{type:"عام", usd:850,  rwf:1000000}] },
   { uni:"INES", campus:"Musanze", level:"بكالوريوس", field:"إدارة الأراضي والمساحة",         name:"التثمين وإدارة الممتلكات (Valuation and Property Management)",duration:4, schedules:[{type:"عام", usd:850,  rwf:1000000}] },
   { uni:"INES", campus:"Musanze", level:"بكالوريوس", field:"علوم الحاسوب وتقنية المعلومات", name:"علوم المعلومات وإدارة المكتبات",                             duration:4, schedules:[{type:"عام", usd:680,  rwf:800000}] },
-  { uni:"INES", campus:"Musanze", level:"بكالوريوس", field:"إدارة الأعمال والاقتصاد",        name:"الاقتصاد - سنة 1 (Economics)",                              duration:4, schedules:[{type:"عام", usd:760,  rwf:900000}] },
-  { uni:"INES", campus:"Musanze", level:"بكالوريوس", field:"إدارة الأعمال والاقتصاد",        name:"الاقتصاد المالي (Financial Economics)",                      duration:4, schedules:[{type:"عام", usd:760,  rwf:900000}] },
-  { uni:"INES", campus:"Musanze", level:"بكالوريوس", field:"إدارة الأعمال والاقتصاد",        name:"اقتصاد التنمية الريفية (Rural Development Economics)",       duration:4, schedules:[{type:"عام", usd:760,  rwf:900000}] },
-  { uni:"INES", campus:"Musanze", level:"بكالوريوس", field:"إدارة الأعمال والاقتصاد",        name:"الاقتصاد الدولي (International Economics)",                  duration:4, schedules:[{type:"عام", usd:760,  rwf:900000}] },
-  { uni:"INES", campus:"Musanze", level:"بكالوريوس", field:"إدارة الأعمال والاقتصاد",        name:"إدارة الأعمال والمحاسبة - سنة 1 (BBA with Accounting)",      duration:4, schedules:[{type:"عام", usd:760,  rwf:900000}] },
+  { uni:"INES", campus:"Musanze", level:"بكالوريوس", field:"إدارة الأعمال والاقتصاد",        name:"الاقتصاد (Economics)",                                       duration:4, schedules:[{type:"عام", usd:760,  rwf:900000}],
+    branches:[
+      { name:"الاقتصاد المالي (Financial Economics)",              duration:4, usd:760, rwf:900000 },
+      { name:"اقتصاد التنمية الريفية (Rural Development Economics)", duration:4, usd:760, rwf:900000 },
+      { name:"الاقتصاد الدولي (International Economics)",           duration:4, usd:760, rwf:900000 },
+    ] },
+  { uni:"INES", campus:"Musanze", level:"بكالوريوس", field:"إدارة الأعمال والاقتصاد",        name:"إدارة الأعمال والمحاسبة (BBA with Accounting)",              duration:4, schedules:[{type:"عام", usd:760,  rwf:900000}] },
   { uni:"INES", campus:"Musanze", level:"بكالوريوس", field:"إدارة الأعمال والاقتصاد",        name:"ريادة الأعمال وتطوير الإدارة (Entrepreneurship Development)", duration:4, schedules:[{type:"عام", usd:760,  rwf:900000}] },
   { uni:"INES", campus:"Musanze", level:"بكالوريوس", field:"القانون والحوكمة",               name:"الإدارة العامة والحوكمة (Public Administration and Governance)",duration:4, schedules:[{type:"عام", usd:760, rwf:900000}] },
   { uni:"INES", campus:"Musanze", level:"بكالوريوس", field:"القانون والحوكمة",               name:"القانون (Law)",                                              duration:4, schedules:[{type:"عام", usd:760,  rwf:900000}] },
@@ -142,8 +144,8 @@ const programs = [
 // ================================================
 //  أرقام واتساب
 // ================================================
-const WA1 = "249991731500";  // +249 99 173 1500
-const WA2 = "250783711304";  // +250 783 711 304
+const WA1 = "250783711304";  // +250 783 711 304
+const WA2 = "249991731500";  // +249 99 173 1500
 
 // ================================================
 //  حالة التطبيق
@@ -339,6 +341,19 @@ function buildCard(p, index) {
     ${isULK ? '<div class="price-note">* سعر الدولار تقريبي (ULK)</div>' : ""}
   </div>
 
+  ${p.branches && p.branches.length ? `
+  <details class="card-branches">
+    <summary>يتفرّع لاحقًا إلى ${p.branches.length} تخصصات فرعية</summary>
+    <ul class="branches-list">
+      ${p.branches.map(b => `
+      <li class="branch-item">
+        <span class="branch-name">${b.name}</span>
+        <span class="branch-price">$${fmt(b.usd)} <span class="branch-rwf">/ ${fmt(b.rwf)} RWF</span></span>
+      </li>`).join("")}
+    </ul>
+    <p class="branches-hint">القبول يكون في التخصص العام أولًا، ثم يتم اختيار أحد هذه التخصصات في سنة لاحقة.</p>
+  </details>` : ""}
+
   <div class="card-action">
     <button class="btn-inquire" onclick="inquireProgram(this)" aria-label="استفسر عن ${escAttr(p.name)}">
       استفسر عن هذا التخصص
@@ -438,7 +453,19 @@ function buildFieldTabs() {
   // أزِل كل شيء ما عدا زر "الكل"
   const allBtn = container.querySelector('[data-field="all"]');
   container.innerHTML = "";
-  if (allBtn) container.appendChild(allBtn);
+  if (allBtn) {
+    container.appendChild(allBtn);
+    allBtn.addEventListener("click", () => {
+      container.querySelectorAll(".tab-btn").forEach(b => {
+        b.classList.remove("active");
+        b.setAttribute("aria-selected", "false");
+      });
+      allBtn.classList.add("active");
+      allBtn.setAttribute("aria-selected", "true");
+      state.activeField = "all";
+      renderPrograms();
+    });
+  }
 
   fields.forEach(f => {
     const btn = document.createElement("button");
